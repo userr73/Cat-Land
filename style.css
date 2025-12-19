@@ -1,0 +1,89 @@
+:root {
+    --primary-colour: #5c3e30;
+    --secondary-colour: #f0d0b7;
+    --selected-colour: #f7dac1;
+    --background-colour: #f4e5d5;
+}
+
+body {
+    display: grid;
+    /* Allocate all extra space to main */
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+
+    /* Change font family */
+    font-family: sans-serif;
+
+    /* Improve spacing */
+    line-height: 1.5rem;
+
+    /* Remove all default edge margins */
+    margin: 0;
+
+    background-color: var(--background-colour);
+}
+
+nav {
+    background-color: var(--secondary-colour);
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        text-align: left;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    li:hover {
+        background-color: var(--selected-colour);
+
+        .sub-menu {
+            display: block;
+
+            li {
+                display: block;
+            }
+        }
+    }
+
+    a {
+        color: var(--logo-colour);
+        text-decoration: none;
+        display: block;
+        padding: 1rem;
+    }
+}
+
+.info-section {
+    p {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.sub-menu {
+    position: absolute;
+    background-color: var(--selected-colour);
+    width: 50vw;
+    display: none;
+    padding: 1rem;
+
+    a {
+        padding: 0;
+        margin-bottom: 0.25rem;
+    }
+}
+
+.menu-category {
+    margin-top: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+.menu-category:first-of-type {
+    margin-top: 0;
+}
+
