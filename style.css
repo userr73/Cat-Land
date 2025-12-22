@@ -1,8 +1,9 @@
 :root {
-    --primary-colour: #5c3e30;
-    --secondary-colour: #f0d0b7;
-    --selected-colour: #f7dac1;
-    --background-colour: #f4e5d5;
+    --primary-colour: #201302;
+    --secondary-colour: #f9e0cc;
+    --selected-colour: #613712;
+    --selected-bg-colour: #f7dac1;
+    --background-colour: #fcf2e8;
 }
 
 body {
@@ -25,36 +26,91 @@ body {
 
 nav {
     background-color: var(--secondary-colour);
+    width: fit-content;
+    margin: 0 auto;
+    position: sticky;
+    top: 1rem;
+
+    border-radius: 10rem;
+    padding: 0rem 1rem;
 
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
-        position: relative;
         text-align: left;
     }
 
     li {
         display: inline-block;
     }
-
+    
+    a {
+        color: var(--primary-colour);
+        text-decoration: none;
+        display: block;
+        
+        margin: 1rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+    
     li:hover {
-        background-color: var(--selected-colour);
+        .menu-title {
+            color: var(--selected-colour);
+        }
 
         .sub-menu {
-            display: block;
+            display: flex;
+            gap: 2rem;
 
             li {
                 display: block;
+                margin: 0;
             }
         }
+
+        .sub-menu.one-col {
+            width: 10rem;
+        }
+
+        .sub-menu.three-col {
+            width: 30rem;
+        }
     }
+}
+
+.sub-menu {
+    position: absolute;
+    background-color: var(--selected-bg-colour);
+    display: none;
+    padding: 1.75rem 1.5rem;
+    width: 20rem;
+    
+    a {
+        margin: 0.05rem 0;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.menu-category {
+    margin-top: 0;
 
     a {
-        color: var(--logo-colour);
-        text-decoration: none;
-        display: block;
-        padding: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+main {
+    max-width: 80ch;
+    margin: 0 auto;
+
+    h1 {
+        padding-top: 2rem;
     }
 }
 
@@ -65,25 +121,4 @@ nav {
     }
 }
 
-.sub-menu {
-    position: absolute;
-    background-color: var(--selected-colour);
-    width: 50vw;
-    display: none;
-    padding: 1rem;
-
-    a {
-        padding: 0;
-        margin-bottom: 0.25rem;
-    }
-}
-
-.menu-category {
-    margin-top: 2rem;
-    margin-bottom: 0.4rem;
-}
-
-.menu-category:first-of-type {
-    margin-top: 0;
-}
 
