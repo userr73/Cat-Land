@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Happy+Monkey&display=swap");
+
 :root {
     --primary-colour: #201302;
     --secondary-colour: #f9e0cc;
@@ -13,7 +15,7 @@ body {
     grid-template-rows: auto 1fr auto;
 
     /* Change font family */
-    font-family: sans-serif;
+    font-family: "Happy Monkey";
 
     /* Improve spacing */
     line-height: 1.5rem;
@@ -34,11 +36,18 @@ nav {
     border-radius: 10rem;
     padding: 0rem 1rem;
 
+    .logo {
+        font-family: 'Amatic SC';
+        font-size: 2rem;
+    }
+
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
         text-align: left;
+
+        display: flex;
     }
 
     li {
@@ -60,9 +69,17 @@ nav {
             color: var(--selected-colour);
         }
 
+        .menu-title.logo {
+        color: var(--primary-colour);
+        }
+
         .sub-menu {
             display: flex;
             gap: 2rem;
+
+            ul {
+                display: grid;
+            }
 
             li {
                 display: block;
@@ -71,11 +88,15 @@ nav {
         }
 
         .sub-menu.one-col {
-            width: 10rem;
+            width: 11rem;
+        }
+        
+        .sub-menu.two-col {
+            width: 22rem;
         }
 
         .sub-menu.three-col {
-            width: 30rem;
+            width: 33rem;
         }
     }
 }
@@ -119,6 +140,8 @@ main {
 
 .section-title {
     color: var(--primary-colour);
+    font-size: 3rem;
+    line-height: 4rem;
 }
 
 .info-section {
@@ -145,6 +168,10 @@ main {
         margin: 1rem auto 0 auto;
         width: 600px;
     }
+
+    ul {
+        margin-top: 0.25rem;
+    }
 }
 
 .paw-separator {
@@ -157,6 +184,15 @@ main {
     .alternate-paw {
         color: var(--selected-bg-colour);
     }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    
+    background-color: var(--secondary-colour);
+    margin-top: 3rem;
+    padding: 1rem;
 }
 
 
