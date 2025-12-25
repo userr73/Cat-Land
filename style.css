@@ -75,7 +75,15 @@ nav {
 
         .sub-menu {
             display: flex;
+            justify-content: center;
             gap: 2rem;
+            margin: 0 auto;
+
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%);
+
 
             ul {
                 display: grid;
@@ -90,13 +98,13 @@ nav {
         .sub-menu.one-col {
             width: 11rem;
         }
-        
+
         .sub-menu.two-col {
             width: 22rem;
         }
 
         .sub-menu.three-col {
-            width: 33rem;
+            width: 31rem;
         }
     }
 }
@@ -167,7 +175,7 @@ main {
     img {
         display: block;
         margin: 1rem auto 0 auto;
-        width: 600px;
+        width: 450px;
     }
 
     ul {
