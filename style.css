@@ -36,6 +36,16 @@ nav {
     border-radius: 10rem;
     padding: 0rem 1rem;
 
+    #menu-toggle {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
     .logo {
         font-family: 'Amatic SC';
         font-size: 2rem;
@@ -70,7 +80,7 @@ nav {
         }
 
         .menu-title.logo {
-        color: var(--primary-colour);
+            color: var(--primary-colour);
         }
 
         .sub-menu {
@@ -105,6 +115,37 @@ nav {
 
         .sub-menu.three-col {
             width: 31rem;
+        }
+    }
+
+    @media (width < 630px) {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        
+        position: absolute;
+        top: 0;
+        
+        ul {
+            display: none;
+        }
+        
+        .hamburger-icon {
+            display: block;
+            
+            span {
+                display: block;
+                width: 2rem;
+                height: 0.2rem;
+                background-color: var(--primary-colour);
+                margin: 0.5rem;
+            }
+        }
+
+
+        #menu-toggle:checked ~ ul {
+            display: flex;
+            flex-direction: column;
         }
     }
 }
