@@ -122,6 +122,8 @@ nav {
         margin: 0;
         padding: 0;
         border-radius: 0;
+
+        width: 100vw;
         
         position: absolute;
         top: 0;
@@ -133,7 +135,6 @@ nav {
         
         .hamburger-icon {
             display: flex;
-            width: 100vw;
             height: 1.5rem;
             flex-direction: column;
             justify-content: space-between;
@@ -257,6 +258,10 @@ main {
         display: block;
         margin: 1rem auto 0 auto;
         width: 450px;
+
+        @media (width <= 482px) {
+            width: 100%;
+        }
     }
 
     ul {
@@ -265,14 +270,48 @@ main {
 }
 
 .paw-separator {
-    display: flex;
-    margin-top: 4rem;
-    gap: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
     
     color: var(--primary-colour);
+
+    padding-top: 2.5rem;
  
     .alternate-paw {
         color: var(--selected-bg-colour);
+    }
+
+    /* Reducing separator at different screen sizes for responsiveness */
+    @media (width <= 780px) {
+        width: 74ch;
+    }
+
+    @media (width <= 720px) {
+        width: 68ch;
+    }
+
+    @media (width <= 670px) {
+        width: 62ch;
+    }
+
+    @media (width <= 610px) {
+        width: 56ch;
+    }
+
+    @media (width <= 550px) {
+        width: 50ch;
+    }
+
+    @media (width <= 490px) {
+        width: 44ch;
+    }
+
+    @media (width <= 440px) {
+        width: 38ch;
+    }
+
+    @media (width <= 390px) {
+        width: 35ch;
     }
 }
 
