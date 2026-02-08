@@ -125,27 +125,63 @@ nav {
         
         position: absolute;
         top: 0;
+
         
         ul {
             display: none;
         }
         
         .hamburger-icon {
-            display: block;
+            display: flex;
+            width: 100vw;
+            height: 1.5rem;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 0.8rem;
+
+            /* background-color: var(--background-colour); */
             
             span {
-                display: block;
                 width: 2rem;
-                height: 0.2rem;
+                height: 0.15rem;
                 background-color: var(--primary-colour);
-                margin: 0.5rem;
+
+                transition: all 0.25s ease-in-out; /* Add smooth transition */
             }
         }
-
 
         #menu-toggle:checked ~ ul {
             display: flex;
             flex-direction: column;
+        }
+
+        #menu-toggle:checked ~ .hamburger-icon {
+            span:nth-child(1) {
+                transform: translateY(0.68rem) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            span:nth-child(3) {
+                transform: translateY(-0.68rem) rotate(-45deg);
+            }
+        }
+
+        li:hover {
+            .sub-menu.two-col {
+                width: 100vw;
+                position: absolute;
+            }
+
+            .sub-menu.three-col {
+                width: 100vw;
+                position: absolute;
+            }
         }
     }
 }
@@ -184,6 +220,10 @@ main {
     h1 {
         /* Ensure content is visible beneath the nav bar */
         padding-top: 2rem;
+
+        @media (width < 630px) {
+            margin-top: 3rem;
+        }
     }
 }
 
