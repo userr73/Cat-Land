@@ -24,6 +24,13 @@ body {
     margin: 0;
 
     background-color: var(--background-colour);
+
+    h1 {
+        font-size: 2.75rem;
+        line-height: 4rem;
+        margin-bottom: 0;
+        margin-top: 1rem;
+    }
 }
 
 nav {
@@ -83,39 +90,43 @@ nav {
             color: var(--primary-colour);
         }
 
-        .sub-menu {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 0 auto;
+        @media (width >= 630px) {
 
-            position: absolute;
-            left: 50%;
-            right: 50%;
-            transform: translate(-50%);
-
-
-            ul {
-                display: grid;
+            .sub-menu {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin: 0 auto;
+    
+                position: absolute;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%);
+    
+    
+                ul {
+                    display: grid;
+                }
+    
+                li {
+                    display: block;
+                    margin: 0;
+                }
             }
-
-            li {
-                display: block;
-                margin: 0;
+    
+            .sub-menu.one-col {
+                width: 11rem;
+            }
+    
+            .sub-menu.two-col {
+                width: 22rem;
+            }
+    
+            .sub-menu.three-col {
+                width: 31rem;
             }
         }
 
-        .sub-menu.one-col {
-            width: 11rem;
-        }
-
-        .sub-menu.two-col {
-            width: 22rem;
-        }
-
-        .sub-menu.three-col {
-            width: 31rem;
-        }
     }
 
     @media (width < 630px) {
@@ -226,12 +237,48 @@ main {
             margin-top: 3rem;
         }
     }
+
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+.homepage-cards {
+    display: grid;
+    gap: 1rem;
+
+    img {
+        max-width: 100%;
+    }
+
+    @media (width < 570px) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (width >= 540px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (width >= 760px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        border: 1px solid var(--selected-colour);
+        border-radius: 6px;
+        padding: 1rem;
+        align-items: center;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    }
 }
 
 .section-title {
     color: var(--primary-colour);
-    font-size: 3rem;
-    line-height: 4rem;
 }
 
 .info-section {
